@@ -22,6 +22,4 @@
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){toggle(false);}});
   window.addEventListener('resize',function(){if(window.innerWidth>980){toggle(false);}});
 
-  var f=document.getElementById('lead');
-  f.addEventListener('submit',function(e){e.preventDefault();/* TODO: подключить отправку заявки (Telegram-бот / CRM / форма) */document.getElementById('ok').style.display='block';f.reset();});
 })();

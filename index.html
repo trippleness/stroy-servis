@@ -11,14 +11,19 @@
 <link rel="stylesheet" href="styles.css?v=20261025-compact-about">
 <style id="about-layout">
 /* About section: balanced portrait and text columns. */
-.about .split{grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:clamp(32px,4vw,64px);align-items:center}
-.about .about__photo{display:block;width:100%;max-width:360px;height:auto;max-height:480px;justify-self:start;border-radius:24px}
+.about .split{grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:clamp(32px,4vw,64px);align-items:center}
+.about .about__photo{display:block;width:100%;max-width:none;height:clamp(360px,38vw,520px);max-height:none;object-fit:cover;object-position:center 65%;justify-self:stretch;border-radius:24px}
 .about h2{font-size:clamp(1.8rem,3vw,2.5rem)}
 @media(max-width:900px){
   .about .split{grid-template-columns:1fr;gap:28px}
-  .about .about__photo{order:2;width:min(100%,300px);max-height:400px;justify-self:center}
+  .about .about__photo{order:2;width:min(100%,360px);height:auto;max-height:none;justify-self:center}
   .about .split>div{order:1}
 }
+.contact-direct{max-width:960px;margin-inline:auto;text-align:center}
+.contact-direct .msgs{justify-content:center;gap:14px}
+.contact-direct .lead{max-width:680px;margin:18px auto 0}
+.contact-direct .note{display:block;margin:22px 0 0;color:var(--muted);font-size:.9rem;font-weight:400}
+@media(max-width:600px){.contact-direct .msgs{display:grid}.contact-direct .btn{width:100%;min-height:52px}}
 </style>
 </head>
 <body>
@@ -38,7 +43,7 @@
     </nav>
 
     <a class="header__tel" href="tel:+79990009955">+7 999 000-99-55<small>Ежедневно, на связи</small></a>
-    <a class="btn btn--ink" href="#contact">Оставить заявку</a>
+    <a class="btn btn--ink" href="#contact">Связаться с нами</a>
 
     <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu">
       <span></span><span></span><span></span>
@@ -54,7 +59,7 @@
   <a class="menu__link" href="#contact">Контакты</a>
   <div class="menu__foot">
     <a class="btn btn--yellow" href="tel:+79990009955">Позвонить +7 999 000-99-55</a>
-    <a class="btn btn--line" href="#contact">Оставить заявку</a>
+    <a class="btn btn--line" href="#contact">Связаться с нами</a>
   </div>
 </div>
 
@@ -134,24 +139,18 @@
   </div>
 </div></section>
 
-<section class="sec" id="contact"><div class="wrap cta">
-  <div>
-    <span class="eyebrow">Контакты</span><h2>Расскажите о задаче — приедем на замер бесплатно</h2>
-    <p class="lead">Ответим быстро и назовём стоимость после осмотра объекта.</p>
+<section class="sec" id="contact"><div class="wrap">
+  <div class="contact-direct">
+    <span class="eyebrow">Связаться с нами</span>
+    <h2>Обсудим вашу задачу — в сообщениях или по телефону</h2>
+    <p class="lead">Напишите, какие работы нужны и где находится объект. Можно прислать фотографии участка — обсудим детали и договоримся о бесплатном замере.</p>
     <div class="msgs">
-      <a class="btn btn--yellow" href="tel:+79990009955">+7 999 000-99-55</a>
-      <a class="btn btn--line" href="https://t.me/AVEYANVAN" target="_blank" rel="noopener">Telegram</a>
-      <a class="btn btn--line" href="https://wa.me/79990009955" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn--yellow" href="https://t.me/AVEYANVAN" target="_blank" rel="noopener">Написать в Telegram</a>
+      <a class="btn btn--line" href="https://wa.me/79990009955" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      <a class="btn btn--line" href="tel:+79990009955">Позвонить +7 999 000-99-55</a>
     </div>
+    <p class="note">Москва и Московская область · Ежедневно на связи</p>
   </div>
-  <form class="form" id="lead">
-    <label>Имя<input name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" required></label>
-    <label>Телефон<input name="phone" type="tel" autocomplete="tel" placeholder="+7" required></label>
-    <label>Что нужно<select name="task"><option>Аренда спецтехники</option><option>Асфальтирование</option><option>Благоустройство</option><option>Земляные работы</option><option>Бетонирование</option><option>Озеленение</option><option>Другое</option></select></label>
-    <button class="btn btn--yellow" type="submit">Заказать замер</button>
-    <small>Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</small>
-    <div class="form__ok" id="ok">Спасибо! Мы перезвоним вам в ближайшее время.</div>
-  </form>
 </div></section>
 <section class="sec sec--sand" id="projects" aria-labelledby="gallery-title"><div class="wrap">
   <div class="sec__head"><span class="eyebrow">Галерея</span><h2 id="gallery-title">Техника и работы на объектах</h2>
@@ -289,6 +288,6 @@
 </main>
 <footer class="footer"><div class="wrap footer__in"><div><b>СтройСервис Мастер</b><br>ООО [название] · ИНН [ ] · ОГРН [ ]</div><div>Москва и Московская область<br><a href="tel:+79990009955">+7 999 000-99-55</a> · <a href="tel:+79057758050">+7 905 775-80-50</a></div><div>© 2026</div></div></footer>
 
-<script src="main.js"></script>
+<script src="main.js?v=20261025-direct-contact"></script>
 </body>
 </html>
