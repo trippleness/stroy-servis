@@ -9,6 +9,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@500;600;700&family=Golos+Text:wght@400;500;600&display=swap&subset=cyrillic" rel="stylesheet">
 <link rel="stylesheet" href="styles.css?v=20261025-compact-about">
+<style id="about-layout">
+/* About section: balanced portrait and text columns. */
+.about .split{grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:clamp(32px,4vw,64px);align-items:center}
+.about .about__photo{display:block;width:100%;max-width:360px;height:auto;max-height:480px;justify-self:start;border-radius:24px}
+.about h2{font-size:clamp(1.8rem,3vw,2.5rem)}
+@media(max-width:900px){
+  .about .split{grid-template-columns:1fr;gap:28px}
+  .about .about__photo{order:2;width:min(100%,300px);max-height:400px;justify-self:center}
+  .about .split>div{order:1}
+}
+</style>
 </head>
 <body>
 
@@ -115,7 +126,7 @@
 </div></section>
 
 <section class="sec sec--sand about"><div class="wrap split">
-  <img class="about__photo" style="width:min(100%,240px);max-width:240px;height:auto;max-height:320px;object-fit:contain;justify-self:center" src="site-portrait.webp" alt="Мужчина на участке асфальтирования, дорожная техника на заднем плане" width="1200" height="1600" loading="lazy" decoding="async">
+  <img class="about__photo" src="site-portrait.webp" alt="Мужчина на участке асфальтирования, дорожная техника на заднем плане" width="1200" height="1600" loading="lazy" decoding="async">
   <div>
     <span class="eyebrow">О компании</span><h2>С 2000 года работаем на дорогах и стройплощадках</h2>
     <p class="lead">Знаем, где объекты подводят: погода, основание, сроки. Поэтому делаем по технологии и берём ответственность по договору.</p>
