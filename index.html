@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>СтройСервис Мастер — аренда спецтехники и асфальтирование в Москве и области</title>
+<title>ССМ — аренда спецтехники и асфальтирование в Москве и области</title>
 <meta name="description" content="Своя спецтехника с оператором, асфальтирование и благоустройство под ключ. Фиксированная цена и срок в договоре. Москва и Московская область.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,24 +24,62 @@
 .contact-direct .lead{max-width:680px;margin:18px auto 0}
 .contact-direct .note{display:block;margin:22px 0 0;color:var(--muted);font-size:.9rem;font-weight:400}
 @media(max-width:600px){.contact-direct .msgs{display:grid}.contact-direct .btn{width:100%;min-height:52px}}
-.gallery-more{margin-top:24px}
-.gallery-more>summary{display:flex;width:fit-content;margin-inline:auto;list-style:none;min-height:52px}
-.gallery-more>summary::-webkit-details-marker{display:none}
-.gallery-more__close{display:none}
-.gallery-more[open] .gallery-more__open{display:none}
-.gallery-more[open] .gallery-more__close{display:inline}
-@media(max-width:600px){.gallery-more>summary{width:100%}}
 .fleet-contact{max-width:900px;margin:28px auto 0;text-align:center}
 .fleet-contact .lead{margin-top:0}
 .fleet-contact .note{display:block;line-height:1.5}
+.social-icon{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;border:1px solid var(--line);border-radius:50%;transition:background .2s,border-color .2s}
+.social-icon:hover{background:var(--sand);border-color:var(--ink)}
+.social-icon svg,.social-link svg,.gallery-actions svg,.menu__foot svg{flex-shrink:0}
+.header__in{gap:18px}
+.header .nav{gap:20px}
+.gallery-actions{display:flex;align-items:center;flex-wrap:wrap;gap:14px}
+.footer__social{display:flex;flex-direction:column;gap:14px}
+.social-link{display:inline-flex;align-items:center;gap:8px;min-height:44px}
+@media(max-width:1200px){
+  .header__tel,.header .logo__text span{display:none}
+  .header .nav{gap:14px}
+  .header .btn--ink{padding:14px 16px}
+}
+@media(max-width:980px){
+  .header .burger{margin-left:0;flex-shrink:0}
+  .header__instagram{margin-left:auto}
+}
+@media(max-width:860px){.header__in{gap:12px}}
+@media(max-width:600px){.gallery-actions{display:grid}.gallery-actions .btn{width:100%;line-height:1.3;text-align:center}}
+/* Horizontal photo gallery, matching the reference composition. */
+.work-gallery{background:#fff}
+.work-gallery__heading{text-align:center;max-width:1120px;margin:0 auto 40px}
+.work-gallery__heading .lead{color:var(--ink);line-height:1.6}
+.work-gallery__shell{--gallery-height:clamp(300px,32vw,500px);display:grid;grid-template-columns:48px minmax(0,1fr) 48px;align-items:center;gap:clamp(16px,3vw,56px);max-width:1640px;margin-inline:auto;padding:0 24px}
+.work-gallery__track{display:flex;gap:24px;min-width:0;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;scroll-padding-inline:0}
+.work-gallery__track::-webkit-scrollbar{display:none}
+.work-gallery__slide{display:block;flex:0 0 auto;width:calc(var(--gallery-height) * var(--photo-ratio));height:var(--gallery-height);scroll-snap-align:start;background:var(--sand)}
+.work-gallery__slide img{display:block;width:100%;height:100%;object-fit:cover}
+.work-gallery__slide:focus-visible{outline-offset:-4px;border-radius:0}
+.work-gallery__arrow{display:grid;place-items:center;width:44px;height:44px;padding:0;border:1.5px solid #d86b18;border-radius:50%;background:#fff;color:#d86b18;cursor:pointer;transition:background .2s,opacity .2s}
+.work-gallery__arrow:hover{background:#fff4e9}
+.work-gallery__arrow:disabled{opacity:.3;cursor:default}
+.work-gallery__arrow--prev svg{transform:rotate(180deg)}
+.work-gallery__footer{margin-top:32px}
+.work-gallery .gallery-actions{justify-content:center}
+@media(max-width:600px){
+  .work-gallery__heading{margin-bottom:24px}
+  .work-gallery__heading .lead{font-size:1rem}
+  .work-gallery__shell{--gallery-height:clamp(240px,75vw,360px);grid-template-columns:44px minmax(0,1fr) 44px;gap:12px;padding:0 20px}
+  .work-gallery__track{grid-column:1/-1;grid-row:1;gap:14px}
+  .work-gallery__slide{max-width:82vw}
+  .work-gallery__arrow{grid-row:2}
+  .work-gallery__arrow--prev{grid-column:1}
+  .work-gallery__arrow--next{grid-column:3}
+}
 </style>
 </head>
 <body>
 
 <header class="header" id="header">
   <div class="header__in">
-    <a href="#" class="logo" aria-label="СтройСервис Мастер — на главную">
-      <span class="logo__text"><b>СтройСервис Мастер</b><span>Спецтехника и благоустройство</span></span>
+    <a href="#" class="logo" aria-label="ССМ — на главную">
+      <span class="logo__text"><b>ССМ</b><span>Спецтехника и благоустройство</span></span>
     </a>
 
     <nav class="nav" aria-label="Основное меню">
@@ -54,6 +92,8 @@
 
     <a class="header__tel" href="tel:+79990009955">+7 999 000-99-55<small>Ежедневно, на связи</small></a>
     <a class="btn btn--ink" href="https://t.me/AVEYANVAN" target="_blank" rel="noopener">Написать в Telegram</a>
+
+    <a class="social-icon header__instagram" href="https://www.instagram.com/stroy_servis_master/" target="_blank" rel="noopener noreferrer" aria-label="ССМ в Instagram" title="ССМ в Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
 
     <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu">
       <span></span><span></span><span></span>
@@ -70,6 +110,7 @@
   <div class="menu__foot">
     <a class="btn btn--yellow" href="tel:+79990009955">Позвонить +7 999 000-99-55</a>
     <a class="btn btn--line" href="https://t.me/AVEYANVAN" target="_blank" rel="noopener">Написать в Telegram</a>
+    <a class="btn btn--line" href="https://www.instagram.com/stroy_servis_master/" target="_blank" rel="noopener noreferrer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>ССМ в Instagram</a>
   </div>
 </div>
 
@@ -166,147 +207,61 @@
     <p class="note">Москва и Московская область · Ежедневно на связи</p>
   </div>
 </div></section>
-<section class="sec sec--sand" id="projects" aria-labelledby="gallery-title"><div class="wrap">
-  <div class="sec__head"><span class="eyebrow">Галерея</span><h2 id="gallery-title">Техника и работы на объектах</h2>
-    <p class="lead">Все фотографии: от подготовки основания до асфальтирования. Нажмите на снимок, чтобы рассмотреть детали.</p>
+<section class="sec work-gallery" id="projects" aria-labelledby="gallery-title">
+  <div class="wrap work-gallery__heading">
+    <h2 id="gallery-title">Наши работы</h2>
+    <p class="lead">Асфальтирование, подготовка основания и благоустройство — фотографии нашей техники и работ на объектах. Листайте галерею, чтобы увидеть все снимки.</p>
   </div>
-  <div class="more-project-photos">
-    <figure>
-      <figcaption><b>Укладка асфальта</b></figcaption>
-      <a href="asphalt-paver-working.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Укладка асфальта"><img src="asphalt-paver-working.webp" alt="Асфальтоукладчик Vögele на границе щебёночного основания и свежего асфальта, рядом каток и рабочий с виброплитой" width="1200" height="1600" loading="lazy" decoding="async"></a>
-    </figure>
-    <figure>
-      <figcaption><b>Асфальтовое покрытие</b></figcaption>
-      <a href="asphalt-driveway.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Асфальтовое покрытие"><img src="asphalt-driveway.webp" alt="Асфальтовый проезд вдоль промышленного здания и водоотводный лоток" width="1200" height="1600" loading="lazy" decoding="async"></a>
-    </figure>
-    <figure>
-      <figcaption><b>Укатка асфальта</b></figcaption>
-      <a href="asphalt-compaction.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Укатка асфальта"><img src="asphalt-compaction.webp" alt="Два дорожных катка уплотняют асфальт между зданием и подпорной стеной" width="1200" height="1600" loading="lazy" decoding="async"></a>
-    </figure>
-    <figure>
-      <figcaption><b>Работы вдоль фасада</b></figcaption>
-      <a href="asphalt-crew.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Работы вдоль фасада"><img src="asphalt-crew.webp" alt="Жёлтый каток и рабочие на асфальтовом покрытии вдоль фасада" width="1200" height="1600" loading="lazy" decoding="async"></a>
-    </figure>
-    <figure>
-      <figcaption><b>Бордюры и основание</b></figcaption>
-      <a href="curbs-and-base-01.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Бордюры и основание"><img src="curbs-and-base-01.webp" alt="Установленные бордюры и подготовка основания возле здания" width="2560" height="1920" loading="lazy" decoding="async"></a>
-    </figure>
-    <figure>
-      <figcaption><b>Подготовка песчаного основания</b></figcaption>
-      <a href="crew-sand-base-02.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Подготовка песчаного основания"><img src="crew-sand-base-02.webp" alt="Рабочие лопатами распределяют песок вдоль здания и установленных бордюров" width="2560" height="1920" loading="lazy" decoding="async"></a>
-    </figure>
-  </div>
-  <details class="gallery-more">
-    <summary class="btn btn--line"><span class="gallery-more__open">Смотреть полностью</span><span class="gallery-more__close">Свернуть галерею</span></summary>
-    <div class="more-project-photos">
-      <figure>
-      <figcaption><b>Земляные работы</b></figcaption>
-      <a href="site-grading-01.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Земляные работы"><img src="site-grading-01.webp" alt="Земляные работы вдоль здания, экскаватор в дальней части площадки" width="1920" height="2560" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Выемка грунта</b></figcaption>
-      <a href="roadside-excavation.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Выемка грунта"><img src="roadside-excavation.webp" alt="Экскаватор-погрузчик JCB выбирает грунт на участке рядом с тротуаром" width="1600" height="1200" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Подготовка площадки</b></figcaption>
-      <a href="roadside-ground-base.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Подготовка площадки"><img src="roadside-ground-base.webp" alt="Участок после выемки грунта, рабочий и виброплита на площадке" width="1600" height="1200" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Песчаный слой</b></figcaption>
-      <a href="roadside-sand-base.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Песчаный слой"><img src="roadside-sand-base.webp" alt="Рабочий выравнивает песчаный слой, на заднем плане экскаватор-погрузчик JCB" width="1600" height="1200" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Подготовка основания и проверка отметок</b></figcaption>
-      <a href="base-level-check.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Подготовка основания и проверка отметок"><img src="base-level-check.webp" alt="Рабочие выравнивают песчаное основание внутри опалубки, справа установлен нивелир на штативе" width="1200" height="1600" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Установка бордюров</b></figcaption>
-      <a href="curb-installation-crew.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Установка бордюров"><img src="curb-installation-crew.webp" alt="Рабочие укладывают бетон рядом с установленными бордюрами и опалубкой" width="1200" height="1600" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Монтаж водоотводных лотков</b></figcaption>
-      <a href="drainage-channel-installation.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Монтаж водоотводных лотков"><img src="drainage-channel-installation.webp" alt="Линия открытых водоотводных лотков на бетонном основании рядом с бордюрами" width="1200" height="1600" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Уплотнение щебёночного основания</b></figcaption>
-      <a href="gravel-compaction-roller.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Уплотнение щебёночного основания"><img src="gravel-compaction-roller.webp" alt="Грунтовый каток JCB на щебёночном основании вдоль промышленного здания" width="1200" height="1600" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Бригада на объекте</b></figcaption>
-      <a href="asphalt-team-wide.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Бригада на объекте"><img src="asphalt-team-wide.webp" alt="Рабочие с лопатами и дорожный каток на асфальтируемом проезде вдоль здания" width="1600" height="1200" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Геотекстиль под щебёночное основание</b></figcaption>
-      <a href="geotextile-base-01.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Геотекстиль под щебёночное основание"><img src="geotextile-base-01.webp" alt="Геотекстиль на подготовленном участке рядом с отсыпанным щебнем" width="1920" height="2560" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Подготовка песчаного основания</b></figcaption>
-      <a href="roller-sand-base-01.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Подготовка песчаного основания"><img src="roller-sand-base-01.webp" alt="Каток JCB на песчаном основании вокруг промышленного здания" width="2560" height="1920" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Подготовка проезда</b></figcaption>
-      <a href="jcb-gravel-curbs-01.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Подготовка проезда"><img src="jcb-gravel-curbs-01.webp" alt="Экскаватор-погрузчик JCB на щебёночном основании рядом с линией бордюров" width="1920" height="2560" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Устройство щебёночного основания</b></figcaption>
-      <a href="gravel-base-overview-01.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Устройство щебёночного основания"><img src="gravel-base-overview-01.webp" alt="Щебёночное основание проездов вокруг промышленного здания с надземными трубопроводами" width="2560" height="1920" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Разработка грунта</b></figcaption>
-      <a href="excavators-earthworks-01.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Разработка грунта"><img src="excavators-earthworks-01.webp" alt="Два гусеничных экскаватора возле промышленного здания на участке земляных работ" width="1181" height="2560" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Экскаватор на земляных работах</b></figcaption>
-      <a href="sunward-earthworks.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Экскаватор на земляных работах"><img src="sunward-earthworks.webp" alt="Гусеничный экскаватор Sunward на грунтовой площадке рядом с выемкой грунта" width="1200" height="1600" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Техника на строительной площадке</b></figcaption>
-      <a href="equipment-group-01.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Техника на строительной площадке"><img src="equipment-group-01.webp" alt="Экскаватор-погрузчик JCB, мини-погрузчик и грунтовый каток возле промышленного здания" width="1181" height="2560" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Техника на объекте</b></figcaption>
-      <a href="jcb-courtyard-01.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Техника на объекте"><img src="jcb-courtyard-01.webp" alt="JCB с ковшом возле жилого дома" width="1181" height="2560" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Перевозка техники</b></figcaption>
-      <a href="tractor-transport-01.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Перевозка техники"><img src="tractor-transport-01.webp" alt="Грузовик с краном перевозит трактор на платформе" width="1181" height="2560" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Асфальтовые катки</b></figcaption>
-      <a href="asphalt-rollers-02.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Асфальтовые катки"><img src="asphalt-rollers-02.webp" alt="Два асфальтовых катка, включая каток Ammann, на площадке" width="1181" height="2560" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Мини-погрузчик Bobcat S175</b></figcaption>
-      <a href="bobcat-s175-01.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Мини-погрузчик Bobcat S175"><img src="bobcat-s175-01.webp" alt="Мини-погрузчик Bobcat S175 с ковшом на заснеженном участке" width="1448" height="1086" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Экскаватор-погрузчик JCB</b></figcaption>
-      <a href="jcb-backhoe-01.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Экскаватор-погрузчик JCB"><img src="jcb-backhoe-01.webp" alt="Экскаватор-погрузчик JCB с передним ковшом" width="1181" height="2560" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Грунтовый каток JCB</b></figcaption>
-      <a href="jcb-soil-roller-01.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Грунтовый каток JCB"><img src="jcb-soil-roller-01.webp" alt="Грунтовый каток JCB на строительной площадке" width="1254" height="1254" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>Фронтальный погрузчик</b></figcaption>
-      <a href="loader.webp" target="_blank" rel="noopener" aria-label="Открыть фото: Фронтальный погрузчик"><img src="loader.webp" alt="Фронтальный погрузчик с полным ковшом песка на карьере" width="736" height="738" loading="lazy" decoding="async"></a>
-    </figure>
-      <figure>
-      <figcaption><b>На объекте</b></figcaption>
-      <a href="site-portrait.webp" target="_blank" rel="noopener" aria-label="Открыть фото: На объекте"><img src="site-portrait.webp" alt="Мужчина на участке асфальтирования, дорожная техника на заднем плане" width="1200" height="1600" loading="lazy" decoding="async"></a>
-    </figure>
+  <div class="work-gallery__shell" role="region" aria-label="Фотографии работ" aria-roledescription="карусель">
+    <button class="work-gallery__arrow work-gallery__arrow--prev" type="button" aria-label="Предыдущие фотографии" aria-controls="work-gallery-track"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="work-gallery__track" id="work-gallery-track" tabindex="0" aria-label="Галерея: листайте влево и вправо">
+      <a class="work-gallery__slide" href="asphalt-paver-working.webp" target="_blank" rel="noopener" style="--photo-ratio:0.750" aria-label="Фото 1 из 30: Асфальтоукладчик Vögele на границе щебёночного основания и свежего асфальта, рядом каток и рабочий с виброплитой"><img src="asphalt-paver-working.webp" alt="Асфальтоукладчик Vögele на границе щебёночного основания и свежего асфальта, рядом каток и рабочий с виброплитой" width="1200" height="1600" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="asphalt-driveway.webp" target="_blank" rel="noopener" style="--photo-ratio:0.750" aria-label="Фото 2 из 30: Асфальтовый проезд вдоль промышленного здания и водоотводный лоток"><img src="asphalt-driveway.webp" alt="Асфальтовый проезд вдоль промышленного здания и водоотводный лоток" width="1200" height="1600" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="asphalt-compaction.webp" target="_blank" rel="noopener" style="--photo-ratio:0.750" aria-label="Фото 3 из 30: Два дорожных катка уплотняют асфальт между зданием и подпорной стеной"><img src="asphalt-compaction.webp" alt="Два дорожных катка уплотняют асфальт между зданием и подпорной стеной" width="1200" height="1600" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="asphalt-crew.webp" target="_blank" rel="noopener" style="--photo-ratio:0.750" aria-label="Фото 4 из 30: Жёлтый каток и рабочие на асфальтовом покрытии вдоль фасада"><img src="asphalt-crew.webp" alt="Жёлтый каток и рабочие на асфальтовом покрытии вдоль фасада" width="1200" height="1600" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="curbs-and-base-01.webp" target="_blank" rel="noopener" style="--photo-ratio:1.150" aria-label="Фото 5 из 30: Установленные бордюры и подготовка основания возле здания"><img src="curbs-and-base-01.webp" alt="Установленные бордюры и подготовка основания возле здания" width="2560" height="1920" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="crew-sand-base-02.webp" target="_blank" rel="noopener" style="--photo-ratio:1.150" aria-label="Фото 6 из 30: Рабочие лопатами распределяют песок вдоль здания и установленных бордюров"><img src="crew-sand-base-02.webp" alt="Рабочие лопатами распределяют песок вдоль здания и установленных бордюров" width="2560" height="1920" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="site-grading-01.webp" target="_blank" rel="noopener" style="--photo-ratio:0.750" aria-label="Фото 7 из 30: Земляные работы вдоль здания, экскаватор в дальней части площадки"><img src="site-grading-01.webp" alt="Земляные работы вдоль здания, экскаватор в дальней части площадки" width="1920" height="2560" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="roadside-excavation.webp" target="_blank" rel="noopener" style="--photo-ratio:1.150" aria-label="Фото 8 из 30: Экскаватор-погрузчик JCB выбирает грунт на участке рядом с тротуаром"><img src="roadside-excavation.webp" alt="Экскаватор-погрузчик JCB выбирает грунт на участке рядом с тротуаром" width="1600" height="1200" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="roadside-ground-base.webp" target="_blank" rel="noopener" style="--photo-ratio:1.150" aria-label="Фото 9 из 30: Участок после выемки грунта, рабочий и виброплита на площадке"><img src="roadside-ground-base.webp" alt="Участок после выемки грунта, рабочий и виброплита на площадке" width="1600" height="1200" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="roadside-sand-base.webp" target="_blank" rel="noopener" style="--photo-ratio:1.150" aria-label="Фото 10 из 30: Рабочий выравнивает песчаный слой, на заднем плане экскаватор-погрузчик JCB"><img src="roadside-sand-base.webp" alt="Рабочий выравнивает песчаный слой, на заднем плане экскаватор-погрузчик JCB" width="1600" height="1200" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="base-level-check.webp" target="_blank" rel="noopener" style="--photo-ratio:0.750" aria-label="Фото 11 из 30: Рабочие выравнивают песчаное основание внутри опалубки, справа установлен нивелир на штативе"><img src="base-level-check.webp" alt="Рабочие выравнивают песчаное основание внутри опалубки, справа установлен нивелир на штативе" width="1200" height="1600" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="curb-installation-crew.webp" target="_blank" rel="noopener" style="--photo-ratio:0.750" aria-label="Фото 12 из 30: Рабочие укладывают бетон рядом с установленными бордюрами и опалубкой"><img src="curb-installation-crew.webp" alt="Рабочие укладывают бетон рядом с установленными бордюрами и опалубкой" width="1200" height="1600" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="drainage-channel-installation.webp" target="_blank" rel="noopener" style="--photo-ratio:0.750" aria-label="Фото 13 из 30: Линия открытых водоотводных лотков на бетонном основании рядом с бордюрами"><img src="drainage-channel-installation.webp" alt="Линия открытых водоотводных лотков на бетонном основании рядом с бордюрами" width="1200" height="1600" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="gravel-compaction-roller.webp" target="_blank" rel="noopener" style="--photo-ratio:0.750" aria-label="Фото 14 из 30: Грунтовый каток JCB на щебёночном основании вдоль промышленного здания"><img src="gravel-compaction-roller.webp" alt="Грунтовый каток JCB на щебёночном основании вдоль промышленного здания" width="1200" height="1600" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="asphalt-team-wide.webp" target="_blank" rel="noopener" style="--photo-ratio:1.150" aria-label="Фото 15 из 30: Рабочие с лопатами и дорожный каток на асфальтируемом проезде вдоль здания"><img src="asphalt-team-wide.webp" alt="Рабочие с лопатами и дорожный каток на асфальтируемом проезде вдоль здания" width="1600" height="1200" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="geotextile-base-01.webp" target="_blank" rel="noopener" style="--photo-ratio:0.750" aria-label="Фото 16 из 30: Геотекстиль на подготовленном участке рядом с отсыпанным щебнем"><img src="geotextile-base-01.webp" alt="Геотекстиль на подготовленном участке рядом с отсыпанным щебнем" width="1920" height="2560" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="roller-sand-base-01.webp" target="_blank" rel="noopener" style="--photo-ratio:1.150" aria-label="Фото 17 из 30: Каток JCB на песчаном основании вокруг промышленного здания"><img src="roller-sand-base-01.webp" alt="Каток JCB на песчаном основании вокруг промышленного здания" width="2560" height="1920" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="jcb-gravel-curbs-01.webp" target="_blank" rel="noopener" style="--photo-ratio:0.750" aria-label="Фото 18 из 30: Экскаватор-погрузчик JCB на щебёночном основании рядом с линией бордюров"><img src="jcb-gravel-curbs-01.webp" alt="Экскаватор-погрузчик JCB на щебёночном основании рядом с линией бордюров" width="1920" height="2560" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="gravel-base-overview-01.webp" target="_blank" rel="noopener" style="--photo-ratio:1.150" aria-label="Фото 19 из 30: Щебёночное основание проездов вокруг промышленного здания с надземными трубопроводами"><img src="gravel-base-overview-01.webp" alt="Щебёночное основание проездов вокруг промышленного здания с надземными трубопроводами" width="2560" height="1920" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="excavators-earthworks-01.webp" target="_blank" rel="noopener" style="--photo-ratio:0.700" aria-label="Фото 20 из 30: Два гусеничных экскаватора возле промышленного здания на участке земляных работ"><img src="excavators-earthworks-01.webp" alt="Два гусеничных экскаватора возле промышленного здания на участке земляных работ" width="1181" height="2560" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="sunward-earthworks.webp" target="_blank" rel="noopener" style="--photo-ratio:0.750" aria-label="Фото 21 из 30: Гусеничный экскаватор Sunward на грунтовой площадке рядом с выемкой грунта"><img src="sunward-earthworks.webp" alt="Гусеничный экскаватор Sunward на грунтовой площадке рядом с выемкой грунта" width="1200" height="1600" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="equipment-group-01.webp" target="_blank" rel="noopener" style="--photo-ratio:0.700" aria-label="Фото 22 из 30: Экскаватор-погрузчик JCB, мини-погрузчик и грунтовый каток возле промышленного здания"><img src="equipment-group-01.webp" alt="Экскаватор-погрузчик JCB, мини-погрузчик и грунтовый каток возле промышленного здания" width="1181" height="2560" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="jcb-courtyard-01.webp" target="_blank" rel="noopener" style="--photo-ratio:0.700" aria-label="Фото 23 из 30: JCB с ковшом возле жилого дома"><img src="jcb-courtyard-01.webp" alt="JCB с ковшом возле жилого дома" width="1181" height="2560" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="tractor-transport-01.webp" target="_blank" rel="noopener" style="--photo-ratio:0.700" aria-label="Фото 24 из 30: Грузовик с краном перевозит трактор на платформе"><img src="tractor-transport-01.webp" alt="Грузовик с краном перевозит трактор на платформе" width="1181" height="2560" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="asphalt-rollers-02.webp" target="_blank" rel="noopener" style="--photo-ratio:0.700" aria-label="Фото 25 из 30: Два асфальтовых катка, включая каток Ammann, на площадке"><img src="asphalt-rollers-02.webp" alt="Два асфальтовых катка, включая каток Ammann, на площадке" width="1181" height="2560" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="bobcat-s175-01.webp" target="_blank" rel="noopener" style="--photo-ratio:1.150" aria-label="Фото 26 из 30: Мини-погрузчик Bobcat S175 с ковшом на заснеженном участке"><img src="bobcat-s175-01.webp" alt="Мини-погрузчик Bobcat S175 с ковшом на заснеженном участке" width="1448" height="1086" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="jcb-backhoe-01.webp" target="_blank" rel="noopener" style="--photo-ratio:0.700" aria-label="Фото 27 из 30: Экскаватор-погрузчик JCB с передним ковшом"><img src="jcb-backhoe-01.webp" alt="Экскаватор-погрузчик JCB с передним ковшом" width="1181" height="2560" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="jcb-soil-roller-01.webp" target="_blank" rel="noopener" style="--photo-ratio:1.000" aria-label="Фото 28 из 30: Грунтовый каток JCB на строительной площадке"><img src="jcb-soil-roller-01.webp" alt="Грунтовый каток JCB на строительной площадке" width="1254" height="1254" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="loader.webp" target="_blank" rel="noopener" style="--photo-ratio:0.997" aria-label="Фото 29 из 30: Фронтальный погрузчик с полным ковшом песка на карьере"><img src="loader.webp" alt="Фронтальный погрузчик с полным ковшом песка на карьере" width="736" height="738" loading="lazy" decoding="async"></a>
+      <a class="work-gallery__slide" href="site-portrait.webp" target="_blank" rel="noopener" style="--photo-ratio:0.750" aria-label="Фото 30 из 30: Мужчина на участке асфальтирования, дорожная техника на заднем плане"><img src="site-portrait.webp" alt="Мужчина на участке асфальтирования, дорожная техника на заднем плане" width="1200" height="1600" loading="lazy" decoding="async"></a>
     </div>
-  </details>
-  <p class="note">Обсудим вашу задачу и подберём технику для объекта.</p>
-  <a class="btn btn--yellow" href="#contact">Обсудить работы на вашем объекте</a>
+    <button class="work-gallery__arrow work-gallery__arrow--next" type="button" aria-label="Следующие фотографии" aria-controls="work-gallery-track"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </div>
+  <div class="wrap work-gallery__footer">
+    <div class="gallery-actions">
+      <a class="btn btn--yellow" href="#contact">Обсудить ваш объект</a>
+      <a class="btn btn--line" href="https://www.instagram.com/stroy_servis_master/" target="_blank" rel="noopener noreferrer">ССМ в Instagram</a>
+    </div>
   <!-- ПОДТВЕРДИТЬ с клиентом: можно ли называть эти организации -->
   <div class="trust"><p>С нами работали</p>
     <div class="chips"><span class="chip">ООО «Грант строй»</span><span class="chip">ООО «Вертикал строй»</span><span class="chip">Администрация г. Химки</span><span class="chip">Администрация г. Лобня</span><span class="chip">Администрация Тверской области</span></div>
   </div>
-</div></section>
+  </div>
+</section>
 </main>
-<footer class="footer"><div class="wrap footer__in"><div><b>СтройСервис Мастер</b><br>ООО [название] · ИНН [ ] · ОГРН [ ]</div><div>Москва и Московская область<br><a href="tel:+79990009955">+7 999 000-99-55</a></div><div>© 2026</div></div></footer>
+<footer class="footer"><div class="wrap footer__in"><div><b>ССМ</b><br>ООО [название] · ИНН [ ] · ОГРН [ ]</div><div>Москва и Московская область<br><a href="tel:+79990009955">+7 999 000-99-55</a></div><div class="footer__social"><a class="social-link" href="https://www.instagram.com/stroy_servis_master/" target="_blank" rel="noopener noreferrer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><span>Instagram</span></a><span>© 2026</span></div></div></footer>
 
-<script src="main.js?v=20261025-direct-contact"></script>
+<script src="main.js?v=20261027-horizontal-gallery"></script>
 </body>
 </html>
