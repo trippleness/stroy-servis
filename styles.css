@@ -258,3 +258,21 @@ h2{margin:0;font-family:var(--head);font-weight:700;font-size:clamp(1.8rem,3.6vw
 
 
 
+
+/* Work processes: a wide feature for one photo, a grid as more are added. */
+.work-processes{padding-top:0}
+.work-processes__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.process-card{margin:0;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:24px;background:#fff}
+.process-card__photo{display:block;overflow:hidden;background:var(--sand)}
+.process-card__photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.process-card__photo:focus-visible{outline-offset:-4px}
+.process-card__caption{padding:24px}
+.process-card__caption h3{margin:0;font-family:var(--head);font-size:1.25rem;line-height:1.25}
+.process-card__caption p{margin:12px 0 0;color:var(--muted);line-height:1.6}
+.process-card:only-child{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);align-items:center}
+.process-card:only-child .process-card__caption{padding:clamp(24px,4vw,56px)}
+@media(max-width:1000px){.work-processes__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){
+  .work-processes__grid{grid-template-columns:minmax(0,1fr)}
+  .process-card:only-child{grid-template-columns:minmax(0,1fr)}
+}
