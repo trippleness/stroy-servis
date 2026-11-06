@@ -56,3 +56,43 @@
     updateArrows();
   }
 })();
+
+// Keep photo viewing on the page, with an accessible close control.
+(function () {
+  const links = document.querySelectorAll('.work-gallery__slide, .process-card__photo');
+  if (!links.length || typeof HTMLDialogElement === 'undefined') return;
+  const viewer = document.createElement('dialog');
+  viewer.className = 'photo-viewer';
+  viewer.setAttribute('aria-label', 'Просмотр фотографии');
+  const close = document.createElement('button');
+  close.type = 'button';
+  close.className = 'photo-viewer__close';
+  close.setAttribute('aria-label', 'Закрыть фотографию');
+  close.textContent = '×';
+  const photo = document.createElement('img');
+  photo.className = 'photo-viewer__image';
+  viewer.append(close, photo);
+  document.body.append(viewer);
+  let opener;
+  links.forEach(link => {
+    link.addEventListener('click', event => {
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      opener = link;
+      photo.src = link.href;
+      photo.alt = link.querySelector('img')?.alt || 'Фотография работ';
+      viewer.showModal();
+      document.body.classList.add('photo-open');
+      close.focus();
+    });
+  });
+  close.addEventListener('click', () => viewer.close());
+  viewer.addEventListener('click', event => {
+    if (event.target === viewer) viewer.close();
+  });
+  viewer.addEventListener('close', () => {
+    document.body.classList.remove('photo-open');
+    photo.removeAttribute('src');
+    if (opener) opener.focus({preventScroll: true});
+  });
+})();

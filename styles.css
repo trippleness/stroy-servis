@@ -273,3 +273,11 @@ h2{margin:0;font-family:var(--head);font-weight:700;font-size:clamp(1.8rem,3.6vw
 @media(max-width:600px){
   .work-processes__grid{grid-template-columns:minmax(0,1fr)}
 }
+
+body.photo-open{overflow:hidden}
+.photo-viewer{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:76px 24px 24px;border:0;background:rgba(0,0,0,.9);color:#fff;box-sizing:border-box}
+.photo-viewer[open]{display:flex;align-items:center;justify-content:center}
+.photo-viewer::backdrop{background:rgba(0,0,0,.65)}
+.photo-viewer__image{display:block;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}
+.photo-viewer__close{position:absolute;top:max(16px,env(safe-area-inset-top));right:max(16px,env(safe-area-inset-right));display:grid;place-items:center;width:48px;height:48px;padding:0;border:1px solid #fff;border-radius:50%;background:#fff;color:#17191B;font:36px/1 Arial,sans-serif;cursor:pointer}
+.photo-viewer__close:hover{background:var(--yellow)}
