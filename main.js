@@ -96,3 +96,18 @@
     if (opener) opener.focus({preventScroll: true});
   });
 })();
+
+// Request video bytes only after the visitor presses play.
+document.querySelectorAll('.process-video').forEach(container => {
+  const button = container.querySelector('.process-video__play');
+  const video = container.querySelector('video');
+  button.addEventListener('click', () => {
+    video.src = video.dataset.src;
+    video.hidden = false;
+    button.hidden = true;
+    video.focus();
+    video.play().catch(() => {
+      // Native controls remain available if the browser blocks playback.
+    });
+  });
+});
