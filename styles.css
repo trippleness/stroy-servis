@@ -324,3 +324,29 @@ body.photo-open{overflow:hidden}
   .object-case,.estimate__grid{grid-template-columns:minmax(0,1fr)}
   .object-case__photos{max-width:600px}
 }
+
+/* Keep the project summary and photo grid balanced in height. */
+.completed-work{padding-block:clamp(48px,5vw,72px)}
+.completed-work .sec__head{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 40px;max-width:none;margin-bottom:32px;align-items:end}
+.completed-work .sec__head .eyebrow{grid-column:1/-1;margin-bottom:0}
+.completed-work h2{font-size:clamp(1.75rem,2.6vw,2.3rem);line-height:1.15;text-wrap:balance}
+.completed-work .sec__head .lead{margin:0;font-size:1rem;line-height:1.55}
+.object-case{gap:40px;align-items:stretch}
+.object-case__story{display:flex;flex-direction:column;min-width:0}
+.object-case__story h3{font-size:1.25rem;line-height:1.3}
+.object-case__facts{gap:16px;margin:20px 0 24px}
+.object-case__facts dd{font-size:.95rem;line-height:1.55}
+.object-case__story>.btn{align-self:flex-start;margin-top:auto;line-height:1.3;text-align:center}
+.object-case__photos{gap:14px}
+.object-case__photo{border-radius:14px}
+.object-case__photo img{aspect-ratio:2/1}
+.object-case__main img{aspect-ratio:2.2/1}
+.object-case__photos figcaption{margin-top:7px;font-size:.8rem;line-height:1.4}
+.object-case__links{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);font-size:.9rem}
+@media(max-width:860px){
+  .completed-work .sec__head{grid-template-columns:minmax(0,1fr);gap:14px;margin-bottom:28px}
+  .object-case{gap:28px}
+  .object-case__photos{max-width:none;width:100%}
+  .object-case__main img{aspect-ratio:16/9}
+  .object-case__photo img{aspect-ratio:4/3}
+}
