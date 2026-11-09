@@ -111,3 +111,25 @@ document.querySelectorAll('.process-video').forEach(container => {
     });
   });
 });
+
+// Keep the overview short while leaving every process available on demand.
+(function () {
+  const toggle = document.getElementById('processes-toggle');
+  const extra = document.getElementById('extra-processes');
+  if (!toggle || !extra) return;
+  extra.hidden = true;
+  toggle.hidden = false;
+  toggle.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(expanded));
+    extra.hidden = !expanded;
+    toggle.textContent = expanded ? 'Свернуть процессы' : 'Все процессы (9)';
+  });
+})();
+
+// Leave video controls unobstructed while playback is active.
+document.querySelectorAll('.process-video__player').forEach(video => {
+  const update = () => document.body.classList.toggle('video-playing',
+    Array.from(document.querySelectorAll('.process-video__player')).some(player => !player.paused && !player.ended));
+  ['play', 'pause', 'ended'].forEach(event => video.addEventListener(event, update));
+});
