@@ -59,7 +59,7 @@
 
 // Keep photo viewing on the page, with an accessible close control.
 (function () {
-  const links = document.querySelectorAll('.work-gallery__slide, .process-card__photo');
+  const links = document.querySelectorAll('.work-gallery__slide, .process-card__photo, .object-case__photo');
   if (!links.length || typeof HTMLDialogElement === 'undefined') return;
   const viewer = document.createElement('dialog');
   viewer.className = 'photo-viewer';
